@@ -19,7 +19,7 @@ export interface Product {
   images: string[];
   sellerId: string;
   createdAt: string;
-  type: 'auction' | 'buy';
+  type: "auction" | "buy";
 }
 
 export interface ListingData {
@@ -27,7 +27,7 @@ export interface ListingData {
   description: string;
   price: number;
   images: string[];
-  type: 'auction' | 'buy';
+  type: "auction" | "buy";
 }
 
 export interface Bid {
@@ -41,4 +41,11 @@ export interface Bid {
 export interface UserProfile extends User {
   listings: Product[];
   bids: Bid[];
+}
+
+//priceproposol
+export interface PriceProposal {
+  amount: number;
+  shippingMethod: "pickup" | "delivery";
+  shippingCost: number;
 }
