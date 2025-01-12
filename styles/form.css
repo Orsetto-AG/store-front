@@ -1,0 +1,70 @@
+/* Form Styles */
+.form-container {
+  @apply max-w-[1200px] mx-auto;
+}
+
+.form-step {
+  @apply flex flex-col gap-6 w-full;
+}
+
+.form-group {
+  @apply flex flex-col gap-2;
+}
+
+.form-label {
+  @apply text-base font-semibold text-gray-700;
+}
+
+.form-input {
+  @apply h-12 rounded-lg border border-gray-200 px-4 focus:border-[#007bff] focus:ring-1 focus:ring-[#007bff] transition-colors;
+}
+
+.form-error {
+  @apply text-sm text-[#dc3545] mt-1;
+}
+
+/* Responsive Grid */
+.grid-cols-responsive {
+  @apply grid grid-cols-1 md:grid-cols-2 gap-6;
+}
+
+/* Touch-friendly targets */
+.touch-target {
+  @apply min-h-[44px] min-w-[44px];
+}
+
+/* Validation States */
+.input-error {
+  @apply border-[#dc3545] focus:border-[#dc3545] focus:ring-[#dc3545];
+}
+
+/* Loading States */
+.loading {
+  @apply opacity-50 pointer-events-none;
+}
+
+/* Animation */
+.slide-enter {
+  @apply transform translate-x-full;
+}
+
+.slide-enter-active {
+  @apply transform translate-x-0 transition-transform duration-500 ease-in-out;
+}
+
+.slide-exit {
+  @apply transform translate-x-0;
+}
+
+.slide-exit-active {
+  @apply transform -translate-x-full transition-transform duration-500 ease-in-out;
+}
+
+/* Category Selection */
+.category-group {
+  @apply space-y-2;
+}
+
+.subcategory-group {
+  @apply pl-4 space-y-2 animate-in slide-in-from-left duration-300;
+}

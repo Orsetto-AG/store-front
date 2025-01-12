@@ -1,0 +1,193 @@
+{
+  "common": {
+    "currency": "CHF",
+    "loading": "Caricamento...",
+    "error": "Si è verificato un errore",
+    "viewAll": "Vedi tutto"
+  },
+  "header": {
+    "searchPlaceholder": "Cosa stai cercando?",
+    "listItem": "Vendi un articolo",
+    "signIn": "Accedi"
+  },
+  "filters": {
+    "title": "Attualmente su Orsetto",
+    "nearby": "Nelle vicinanze",
+    "endingSoon": "In scadenza",
+    "fromOne": "Da CHF 1.-",
+    "popular": "Popolare",
+    "new": "Nuovo",
+    "recommended": "Consigliato"
+  },
+  "home": {
+    "liveAuctions": "Aste in diretta",
+    "frankOffers": "Offerte da 1 Franco",
+    "newProducts": "Nuovi Prodotti"
+  },
+  "product": {
+    "auction": {
+      "currentBid": "Offerta attuale",
+      "placeBid": "Fai un'offerta",
+      "minBid": "Offerta minima",
+      "timeLeft": "Tempo rimanente",
+      "bidHistory": "Cronologia offerte",
+      "noBids": "Nessuna offerta"
+    },
+    "buy": {
+      "buyNow": "Acquista ora",
+      "addToCart": "Aggiungi al carrello"
+    },
+    "details": {
+      "description": "Descrizione",
+      "shipping": "Spedizione",
+      "payment": "Pagamento",
+      "specifications": "Dettagli tecnici",
+      "location": "Località: Svizzera",
+      "shippingCost": "Spedizione: CHF 7.90 (B-Post)",
+      "protection": "Protezione acquirenti di Orsetto"
+    }
+  },
+  "seller": {
+    "contact": "Contatta il venditore",
+    "viewAll": "Vedi tutti gli annunci",
+    "verified": "Venditore verificato",
+    "memberSince": "Membro dal",
+    "responseRate": "Tasso di risposta",
+    "activeListings": "Annunci attivi",
+    "sales": "Vendite"
+  },
+  "sections": {
+    "liveAuctions": "Aste in diretta",
+    "frankOffers": "Offerte a 1 franco",
+    "newProducts": "Nuovi prodotti"
+  },
+  "footer": {
+    "trustedMarketplace": "Il tuo mercato suino fidato per comprare e vendere. Unisciti a noi oggi per diventare parte della nostra comunità.",
+    "about": {
+      "title": "Chi siamo",
+      "aboutUs": "Chi siamo",
+      "careers": "Lavora con noi",
+      "press": "Stampa",
+      "blog": "Blog"
+    },
+    "support": {
+      "title": "Supporto",
+      "helpCenter": "Centro assistenza",
+      "safetyCenter": "Centro sicurezza",
+      "communityGuidelines": "Linee guida"
+    },
+    "vendors": {
+      "title": "Venditori",
+      "sell": "Vendi su Orsetto",
+      "portal": "Portale venditori",
+      "guidelines": "Linee guida venditori",
+      "stories": "Storie di successo"
+    },
+    "legal": {
+      "privacy": "Privacy",
+      "terms": "Termini e condizioni",
+      "copyright": "Tutti i diritti riservati."
+    }
+  },
+  "categories": {
+    "electronics": {
+      "name": "Elettronica",
+      "subcategories": {
+        "smartphones": "Smartphone & Tablet",
+        "computers": "Computer & Laptop",
+        "cameras": "Fotocamere & Fotografia",
+        "audio": "Audio & Cuffie",
+        "gaming": "Gaming & Console",
+        "tv": "TV & Home Theater"
+      }
+    },
+    "fashion": {
+      "name": "Moda",
+      "subcategories": {
+        "mens": "Abbigliamento Uomo",
+        "womens": "Abbigliamento Donna",
+        "kids": "Bambini & Neonati",
+        "shoes": "Scarpe",
+        "bags": "Borse & Accessori",
+        "jewelry": "Gioielli & Orologi"
+      }
+    },
+    "home": {
+      "name": "Casa & Living",
+      "subcategories": {
+        "furniture": "Mobili",
+        "kitchen": "Cucina & Tavola",
+        "decor": "Decorazioni",
+        "bedding": "Letto & Bagno",
+        "storage": "Organizzazione & Contenitori",
+        "garden": "Giardino & Esterni"
+      }
+    },
+    "sports": {
+      "name": "Sport & Outdoor",
+      "subcategories": {
+        "exercise": "Attrezzatura Fitness",
+        "outdoor": "Attività all'aperto",
+        "team": "Sport di squadra",
+        "camping": "Camping & Escursionismo",
+        "cycling": "Ciclismo",
+        "winter": "Sport invernali"
+      }
+    },
+    "beauty": {
+      "name": "Bellezza & Salute",
+      "subcategories": {
+        "skincare": "Cura della pelle",
+        "makeup": "Trucco",
+        "haircare": "Cura dei capelli",
+        "fragrances": "Profumi",
+        "personal": "Cura personale",
+        "health": "Integratori"
+      }
+    },
+    "automotive": {
+      "name": "Auto & Moto",
+      "subcategories": {
+        "carParts": "Ricambi & Accessori Auto",
+        "motorcycle": "Ricambi Moto",
+        "tools": "Attrezzi & Equipaggiamento",
+        "electronics": "Elettronica Auto",
+        "tires": "Pneumatici & Cerchi",
+        "care": "Cura dell'auto"
+      }
+    },
+    "toys": {
+      "name": "Giocattoli & Hobby",
+      "subcategories": {
+        "action": "Action Figure",
+        "building": "Costruzioni",
+        "arts": "Arte & Creatività",
+        "remote": "Radiocomandati",
+        "board": "Giochi da tavolo",
+        "collectibles": "Collezionismo"
+      }
+    },
+    "books": {
+      "name": "Libri & Media",
+      "subcategories": {
+        "fiction": "Narrativa",
+        "nonfiction": "Saggistica",
+        "textbooks": "Libri di testo",
+        "magazines": "Riviste",
+        "ebooks": "eBook",
+        "audiobooks": "Audiolibri"
+      }
+    },
+    "pets": {
+      "name": "Animali",
+      "subcategories": {
+        "dog": "Articoli per cani",
+        "cat": "Articoli per gatti",
+        "fish": "Acquari & Pesci",
+        "small": "Piccoli animali",
+        "food": "Cibo per animali",
+        "healthcare": "Salute animale"
+      }
+    }
+  }
+}
