@@ -49,3 +49,4 @@ export interface PriceProposal {
   shippingMethod: "pickup" | "delivery";
   shippingCost: number;
 }
+

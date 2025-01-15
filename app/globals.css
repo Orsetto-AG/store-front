@@ -161,3 +161,10 @@ nav.category-nav .dropdown-menu {
 .main-content-wrapper {
   overflow-x: hidden;
 }
+
+.sticky-sidebar {
+  position: sticky;
+  top: calc(140px + 20px); /* Menünün yüksekliğine göre ayarlayın */
+  height: calc(100vh - 80px); /* Menünün yüksekliğine göre ayarlayın */
+  overflow-y: auto;
+}

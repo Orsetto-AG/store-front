@@ -9,6 +9,11 @@ interface Product {
   id: string;
   title: string;
   price?: number;
+  priceSuggestion: boolean;
+  minPriceSuggestion: number;
+  shippingcost: number;
+  shippingtyp: ('A Post' | 'B Post' | 'Abholung')[];
+  paymentsmethod: ('Überweisung' | 'Barzahlung')[];
   currentBid?: number;
   minIncrement?: number;
   images: string[];
@@ -31,6 +36,8 @@ interface Product {
     responseRate: number;
     activeListings: number;
     completedSales: number;
+    isFollowed:boolean;
+    location: string;
   };
 }
 
@@ -49,14 +56,20 @@ export default function ProductPageClient({ id }: { id: string }) {
       id,
       title: isAuction ? 'Vintage Leica M6' : 'Sony A7 III',
       type: isAuction ? 'auction' : 'standard',
-      price: isAuction ? undefined : 1899.99,
+      price: isAuction ? undefined : 1899,
+      priceSuggestion: true,
+      minPriceSuggestion: 1500,
+      shippingcost: 5.99,
+      shippingtyp: ['B Post'],
+      paymentsmethod: ['Überweisung', 'Barzahlung'],
       currentBid: isAuction ? 3150.00 : undefined,
       minIncrement: isAuction ? 50 : undefined,
       endTime: isAuction ? new Date(Date.now() + 86400000).toISOString() : undefined,
       images: [
         'https://images.unsplash.com/photo-1516724562728-afc824a36e84?w=800&h=600&fit=crop',
         'https://images.unsplash.com/photo-1510127034890-ba27508e9f1c?w=800&h=600&fit=crop',
-        'https://images.unsplash.com/photo-1516035069371-29a1b244cc32?w=800&h=600&fit=crop'
+        'https://images.unsplash.com/photo-1516035069371-29a1b244cc32?w=800&h=600&fit=crop',
+        'https://plus.unsplash.com/premium_photo-1684445034763-013f0525c40c?q=80&w=3087&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D'
       ],
       description: 'Professional camera with exceptional image quality and advanced features.',
       specifications: {
@@ -88,7 +101,9 @@ export default function ProductPageClient({ id }: { id: string }) {
         joinedAt: '2023-01-01',
         responseRate: 98,
         activeListings: 45,
-        completedSales: 1234
+        completedSales: 1234,
+        isFollowed: false,
+        location: 'Zürich'
       }
     };
 
