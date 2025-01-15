@@ -10,6 +10,11 @@
     "listItem": "List an item",
     "signIn": "Sign in"
   },
+  "notification": {
+    "notifications": "Notifications",
+    "unread": "Unread",
+    "noNotifications": "No notifications at the moment"
+  },
   "filters": {
     "title": "Currently on Orsetto",
     "nearby": "Nearby",

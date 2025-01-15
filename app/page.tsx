@@ -5,6 +5,8 @@ import FilterBar from '@/components/FilterBar';
 import Footer from '@/components/Footer';
 import BannerSection from '@/components/BannerSection';
 import { Banknote, Clock, Heart, MapPin, Sparkles } from 'lucide-react';
+import MobileHeader from '@/components/header/MobileHeader';
+import Header from '@/components/header';
 
 // Extended mock data for better slider testing
 const auctionProducts = [
@@ -254,6 +256,8 @@ export default function Home() {
 
   return (
     <div className="min-h-screen bg-gray-50">
+     <Header />
+     <MobileHeader />
       {/* Banner Section */}
       <BannerSection />
 

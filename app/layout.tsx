@@ -1,10 +1,10 @@
 import './globals.css';
 import type { Metadata } from 'next';
 import { Inter } from 'next/font/google';
-import Navbar from '@/components/Navbar';
-import MobileNavBar from '@/components/MobileNavBar';
 import { Toaster } from '@/components/ui/toaster';
 import { Providers } from './providers';
+import Header from '@/components/header';
+import MobileHeader from '@/components/header/MobileHeader';
 
 const inter = Inter({ subsets: ['latin'] });
 
@@ -22,9 +22,7 @@ export default function RootLayout({
     <html lang="en">
       <body className={inter.className}>
         <Providers>
-          <Navbar />
           <main className="min-h-screen bg-gray-50 pb-16 md:pb-0">{children}</main>
-          <MobileNavBar />
           <Toaster />
         </Providers>
       </body>

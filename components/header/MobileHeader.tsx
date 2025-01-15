@@ -4,6 +4,7 @@ import Link from 'next/link';
 import { usePathname } from 'next/navigation';
 import { Home, Grid, Tag, Heart, User } from 'lucide-react';
 import { cn } from '@/lib/utils';
+import { useMediaQuery } from '@/hooks/use-media-query';
 
 const navItems = [
   { href: '/', label: 'Home', icon: Home },
@@ -13,11 +14,13 @@ const navItems = [
   { href: '/profile', label: 'Profile', icon: User },
 ];
 
-export default function MobileNavBar() {
+export default function MobileHeader() {
   const pathname = usePathname();
+  const isTabletOrMobile = useMediaQuery('(max-width: 1024px)'); 
+  if (!isTabletOrMobile) return null;
 
   return (
-    <nav className="fixed bottom-0 left-0 right-0 z-50 bg-white border-t md:hidden">
+    <nav className="fixed bottom-0 left-0 right-0 z-50 bg-white border-t">
       <div className="flex items-center justify-around h-16">
         {navItems.map(({ href, label, icon: Icon }) => {
           const isActive = pathname === href;

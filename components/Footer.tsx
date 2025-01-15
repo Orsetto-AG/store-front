@@ -2,7 +2,7 @@
 
 import Link from 'next/link';
 import { Facebook, Instagram, Linkedin, Twitter, Youtube } from 'lucide-react';
-import BearLogo from './BearLogo';
+import BearLogo from './ui/BearLogo';
 import { useLanguage } from '@/lib/i18n';
 
 const socialLinks = [
@@ -38,6 +38,8 @@ export default function Footer() {
 
   return (
     <footer className="bg-white border-t">
+      {/* Renkli Bar */}
+      <div className="h-1 bg-gradient-to-r from-[#ff6600] via-[#ff8533] to-[#008e9b]" />
       <div className="container mx-auto px-4 py-12">
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-12 gap-8">
           {/* Brand Section */}

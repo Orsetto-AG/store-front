@@ -10,6 +10,11 @@
     "listItem": "Vendre un article",
     "signIn": "Se connecter"
   },
+  "notification": {
+    "notifications": "Notifications",
+    "unread": "Non lu",
+    "noNotifications": "Pas de notifications pour le moment"
+  },
   "filters": {
     "title": "Actuellement sur Orsetto",
     "nearby": "À proximité",

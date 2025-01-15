@@ -1,5 +1,3 @@
-'use client';
-
 import { useRef } from 'react';
 import { ChevronLeft, ChevronRight, Heart, Timer, Eye } from 'lucide-react';
 import Link from 'next/link';
@@ -78,7 +76,7 @@ export default function ProductSlider({ title, products, type, viewAllHref }: Pr
               href={`/product/${product.id}`}
               className="flex-none w-[160px] xs:w-[180px] sm:w-[200px] lg:w-[calc((100%-5*1rem)/6)] snap-start"
             >
-              <Card className="h-full hover:shadow-md transition-all duration-200 border-gray-100">
+              <Card className="h-[90%] hover:shadow-md transition-all duration-200 border-gray-100"> {/* Reduce height to 90% */}
                 <div className="relative">
                   <div className="relative aspect-[4/3]">
                     <Image

@@ -10,6 +10,11 @@
     "listItem": "Artikel einstellen",
     "signIn": "Anmelden"
   },
+  "notification": {
+    "notifications": "Benachrichtigungen",
+    "unread": "Ungelesen",
+    "noNotifications": "Derzeit keine Benachrichtigungen"
+  },
   "filters": {
     "title": "Aktuell auf Orsetto",
     "nearby": "In meiner Nähe",
