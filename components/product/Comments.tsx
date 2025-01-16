@@ -41,8 +41,7 @@ export default function Comments() {
     <div className="max-w-3xl mx-auto mt-12">
       <div className="bg-white rounded-xl max-w-4xl mx-auto overflow-hidden">
         <div className="p-6 bg-gradient-to-r from-orange-500 to-orange-600">
-          <h2 className="text-2xl font-bold text-white">Questions & Answers</h2>
-          <p className="text-orange-50 mt-1">Ask about this product or share your experience</p>
+          <h2 className="text-xl font-bold text-white">Questions & Answers</h2>
         </div>
 
         <div className="p-6">

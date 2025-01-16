@@ -1,5 +1,5 @@
 import React, { useEffect, useRef, useState } from 'react';
-import { Share2, X, Facebook, Twitter, Copy, Instagram, Mail, MessageSquare } from 'lucide-react';
+import { X, Facebook, Twitter, Copy, Instagram, Mail, MessageSquare } from 'lucide-react';
 import { MessageCircle } from 'lucide-react';
 
 interface ShareModalProps {
