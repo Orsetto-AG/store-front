@@ -16,6 +16,8 @@ import Comments from "./Comments";
 import { CommentProvider } from "@/context/CommentContext";
 import { MessageCircle } from "lucide-react";
 import { ComplaintModal } from './ComplaintModal';
+import Header from '@/components/header';
+import MobileHeader from "../header/MobileHeader";
 
 interface StandardProductDetailProps {
   product: any;
@@ -53,7 +55,9 @@ export default function StandardProductDetail({ product }: StandardProductDetail
   };
 
   return (
-    //<div className="container mx-auto px-4 py-6">
+  <div className="min-h-screen bg-gray-50">  
+    <Header />
+    <MobileHeader/>
     <div className="max-w-7xl mx-auto px-4 py-6">
       {/* Main Content */}
       <div className="grid grid-cols-1 lg:grid-cols-[1fr,500px] gap-4">
@@ -320,6 +324,7 @@ export default function StandardProductDetail({ product }: StandardProductDetail
         productUrl={productUrl}
       />
     </div>
+  </div>
 
   );
 }
