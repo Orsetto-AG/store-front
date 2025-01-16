@@ -67,7 +67,15 @@
     "newProducts": "Neue Produkte"
   },
   "footer": {
-    "trustedMarketplace": "Ihr vertrauenswürdiger Schweizer Marktplatz zum Kaufen und Verkaufen. Werden Sie noch heute Teil unserer Community.",
+    "termsOfService": "AGB",
+    "privacyPolicy": "Datenschutzerklärung",
+    "cookiesPolicy": "Cookies",
+    "imprint": "Impressum",
+    "helpCenter": "Hilfezentrum",
+    "legal": {
+      "copyright": "Alle Rechte vorbehalten."
+    }
+  },
     "about": {
       "title": "Über uns",
       "aboutUs": "Über uns",
@@ -88,12 +96,6 @@
       "guidelines": "Verkäufer-Richtlinien",
       "stories": "Erfolgsgeschichten"
     },
-    "legal": {
-      "privacy": "Datenschutz",
-      "terms": "AGB",
-      "copyright": "Alle Rechte vorbehalten."
-    }
-  },
   "categories": {
     "electronics": {
       "name": "Elektronik",

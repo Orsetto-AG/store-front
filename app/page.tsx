@@ -2,15 +2,15 @@
 
 import ProductSlider from '@/components/ProductSlider';
 import FilterBar from '@/components/FilterBar';
-import Footer from '@/components/Footer';
+
 import BannerSection from '@/components/BannerSection';
 import { Banknote, Clock, Heart, MapPin, Sparkles } from 'lucide-react';
 import MobileHeader from '@/components/header/MobileHeader';
 import Header from '@/components/header';
+import Footer from '@/components/footer/Footer';
 import { useState, useEffect } from "react";
 import { useRouter, useSearchParams } from "next/navigation";
 import SMSVerificationModal from '@/components/SMSVerificationModal';
-
 
 // Extended mock data for better slider testing
 const auctionProducts = [

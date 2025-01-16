@@ -67,7 +67,15 @@
     "newProducts": "Nouveaux produits"
   },
   "footer": {
-    "trustedMarketplace": "Votre marché suisse fiable pour acheter et vendre. Rejoignez-nous dès aujourd'hui pour faire partie de notre communauté.",
+    "termsOfService": "Conditions d'utilisation",
+    "privacyPolicy": "Politique de confidentialité",
+    "cookiesPolicy": "Politique des cookies",
+    "imprint": "Mentions légales",
+    "helpCenter": "Centre d'aide",
+    "legal": {
+      "copyright": "Tous droits réservés."
+    }
+  },
     "about": {
       "title": "À propos",
       "aboutUs": "À propos de nous",
@@ -88,12 +96,7 @@
       "guidelines": "Directives vendeurs",
       "stories": "Histoires de réussite"
     },
-    "legal": {
-      "privacy": "Politique de confidentialité",
-      "terms": "Conditions d'utilisation",
-      "copyright": "Tous droits réservés."
-    }
-  },
+
   "categories": {
     "electronics": {
       "name": "Électronique",

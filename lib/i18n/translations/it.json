@@ -66,8 +66,17 @@
     "frankOffers": "Offerte a 1 franco",
     "newProducts": "Nuovi prodotti"
   },
-  "footer": {
-    "trustedMarketplace": "Il tuo mercato suino fidato per comprare e vendere. Unisciti a noi oggi per diventare parte della nostra comunità.",
+
+  "footer": { 
+    "termsOfService": "Termini di servizio",
+    "privacyPolicy": "Informativa sulla privacy",
+    "cookiesPolicy": "Cookie Policy",
+    "imprint": "Note Legali",
+    "helpCenter": "Centro Assistenza",
+    "legal": {
+      "copyright": "Tutti i diritti riservati."
+    }
+  },
     "about": {
       "title": "Chi siamo",
       "aboutUs": "Chi siamo",
@@ -88,12 +97,6 @@
       "guidelines": "Linee guida venditori",
       "stories": "Storie di successo"
     },
-    "legal": {
-      "privacy": "Privacy",
-      "terms": "Termini e condizioni",
-      "copyright": "Tutti i diritti riservati."
-    }
-  },
   "categories": {
     "electronics": {
       "name": "Elettronica",
