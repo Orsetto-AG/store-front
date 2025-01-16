@@ -25,8 +25,8 @@ export const PriceProposalForm: React.FC<PriceProposalFormProps> = ({
     });
   };
 
+
   const total = amount + (shippingMethod === 'delivery' ? 10.50 : 0);
-  const savings = productPrice - amount;
 
   return (
     <form onSubmit={handleSubmit} className="space-y-6">
@@ -35,21 +35,16 @@ export const PriceProposalForm: React.FC<PriceProposalFormProps> = ({
           Your Offer Amount
         </label>
         <div className="relative">
-          <span className="absolute left-3 top-1/2 -translate-y-1/2 text-gray-500">$</span>
+          <span className="absolute left-3 top-1/2 -translate-y-1/2 text-gray-900">CHF</span>
           <input
             type="number"
             value={amount}
             onChange={(e) => setAmount(Number(e.target.value))}
-            className="pl-8 block w-full rounded-lg border-gray-300 shadow-sm focus:border-orange-500 focus:ring-orange-500 text-lg"
+            className="pl-14 block w-full h-12 rounded-lg border-gray-300 shadow-sm focus:border-orange-500 focus:ring-orange-500 text-lg"
             min="0"
             step="1"
           />
         </div>
-        {savings > 0 && (
-          <p className="mt-2 text-sm text-green-600">
-            You save ${savings.toFixed(2)} off the list price
-          </p>
-        )}
       </div>
 
       <div className="space-y-3">
@@ -62,7 +57,7 @@ export const PriceProposalForm: React.FC<PriceProposalFormProps> = ({
             onClick={() => setShippingMethod('delivery')}
             className={`p-4 rounded-lg border-2 text-left transition-all ${
               shippingMethod === 'delivery'
-                ? 'border-orange-600 bg-[#d6eadf]'
+                ? 'border-orange-600'
                 : 'border-gray-200 hover:border-gray-300'
             }`}
           >
@@ -81,7 +76,7 @@ export const PriceProposalForm: React.FC<PriceProposalFormProps> = ({
             onClick={() => setShippingMethod('pickup')}
             className={`p-4 rounded-lg border-2 text-left transition-all ${
               shippingMethod === 'pickup'
-                ? 'border-orange-600 bg-[#d6eadf]'
+                ? 'border-orange-600'
                 : 'border-gray-200 hover:border-gray-300'
             }`}
           >
@@ -98,7 +93,7 @@ export const PriceProposalForm: React.FC<PriceProposalFormProps> = ({
         </div>
       </div>
 
-      <div className="bg-[#d6eadf] p-4 rounded-lg space-y-3">
+      <div className="p-4 rounded-lg space-y-3">
         <div className="flex justify-between text-sm">
           <span className="text-gray-500">Offer Amount</span>
           <span className="font-medium">${amount.toFixed(2)}</span>
@@ -115,7 +110,7 @@ export const PriceProposalForm: React.FC<PriceProposalFormProps> = ({
 
       <button
         type="submit"
-        className="w-full bg-green-600 text-white py-4 px-6 rounded-lg hover:bg-green-700 transition-colors font-medium text-lg"
+        className="w-full bg-gradient-to-r from-indigo-600 to-blue-500 text-white py-4 px-6 rounded-lg transition-colors font-medium text-lg"
       >
         Submit Offer
       </button>

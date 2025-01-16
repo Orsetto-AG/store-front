@@ -1,7 +1,8 @@
 'use client';
 
+import React, { useState } from 'react';
 import Image from 'next/image';
-import { Star } from 'lucide-react';
+import { Heart, Star, Package, Calendar, MessageSquare, ShoppingBag } from 'lucide-react';
 import { Button } from '@/components/ui/button';
 
 interface SellerInfoProps {
@@ -14,64 +15,100 @@ interface SellerInfoProps {
     responseRate: number;
     activeListings: number;
     completedSales: number;
+    isFollowed: boolean;
   };
+  variant?: 'compact' | 'full';
 }
 
-export default function SellerInfo({ seller }: SellerInfoProps) {
+export default function SellerInfo({ seller, variant = 'compact' }: SellerInfoProps) {
+  const [isFollowing, setIsFollowing] = useState(seller.isFollowed);
+
   return (
-    <div className="bg-white p-6 rounded-lg shadow-sm">
-      <div className="flex items-center gap-4 mb-6">
-        <div className="relative w-12 h-12 rounded-full overflow-hidden">
-          <Image
-            src={seller.avatar}
-            alt={seller.name}
-            fill
-            className="object-cover"
-          />
-        </div>
-        <div>
-          <h3 className="font-medium text-lg">{seller.name}</h3>
-          <div className="flex items-center gap-1">
-            <Star className="h-4 w-4 fill-yellow-400 text-yellow-400" />
-            <span className="font-medium">{seller.rating}</span>
-            <span className="text-gray-500">({seller.reviewCount})</span>
+    <div className={`bg-white rounded-xl max-w-4xl mx-auto overflow-hidden ${variant === 'compact' ? 'compact' : 'full'}`}>
+      {variant === 'compact' ? (
+        <div className="flex items-center justify-between py-3 border-t border-b border-gray-100">
+          <div className="flex items-center gap-3">
+            <div className="flex items-center gap-2">
+              <span className="text-gray-600">Seller:</span>
+              <span className="font-semibold text-gray-900">{seller.name}</span>
+            </div>
+            <div className="flex items-center gap-1 px-2 py-0.5 bg-green-100 rounded-md">
+              <Star className="w-3 h-3 text-green-600 fill-current" />
+              <span className="font-semibold text-green-600 text-sm">{seller.rating}</span>
+            </div>
           </div>
         </div>
-      </div>
+      ) : (
+        <div className="p-6">
+          <h2 className="text-2xl font-bold text-gray-900 mb-6">About the Seller</h2>
+          <div className="flex flex-col sm:flex-row items-start gap-6">
+            <div className="flex-shrink-0">
+              <Image
+                src={seller.avatar}
+                alt={seller.name}
+                width={96}
+                height={96}
+                className="rounded-full object-cover"
+              />
+            </div>
+            <div className="flex-grow relative">
+              <div className="flex flex-col sm:flex-row sm:items-center sm:justify-between mb-4">
+                <div className="flex items-center gap-3">
+                  <h3 className="text-xl font-semibold text-gray-900">{seller.name}</h3>
+                  <div className="flex items-center gap-1">
+                    <Star className="w-4 h-4 text-yellow-400 fill-current" />
+                    <span className="font-bold text-gray-900">{seller.rating}</span>
+                    <span className="text-gray-500">({seller.reviewCount})</span>
+                  </div>
+                </div>
+                <button
+                  onClick={() => setIsFollowing(!isFollowing)}
+                  className={`sm:static absolute top-0 right-0 flex items-center gap-1 px-3 py-1.5 text-sm rounded-lg border transition-colors ${
+                    isFollowing
+                      ? 'bg-orange-50 border-orange-200 text-orange-600'
+                      : 'border-gray-200 text-gray-600 hover:border-orange-200 hover:text-orange-600'
+                  }`}
+                >
+                  <Heart className={`w-3 h-3 ${isFollowing ? 'fill-current' : ''}`} />
+                  {isFollowing ? 'Following' : 'Follow'}
+                </button>
+              </div>
 
-      <div className="space-y-4">
-        <div className="grid grid-cols-2 gap-4">
-          <div>
-            <div className="text-gray-500">Mitglied seit</div>
-            <div className="font-medium">{new Date(seller.joinedAt).getFullYear()}</div>
+              <div className="grid grid-cols-2 gap-6">
+                <div className="space-y-4">
+                  <div className="flex items-center gap-2 text-gray-600">
+                    <Calendar className="w-4 h-4" />
+                    <span>Member since {new Date(seller.joinedAt).getFullYear()}</span>
+                  </div>
+                  <div className="flex items-center gap-2 text-gray-600">
+                    <MessageSquare className="w-4 h-4" />
+                    <span>Response rate: {seller.responseRate}%</span>
+                  </div>
+                </div>
+                <div className="space-y-4">
+                  <div className="flex items-center gap-2 text-gray-600">
+                    <Package className="w-4 h-4" />
+                    <span>{seller.activeListings} active listings</span>
+                  </div>
+                  <div className="flex items-center gap-2 text-gray-600">
+                    <ShoppingBag className="w-4 h-4" />
+                    <span>{seller.completedSales} total sales</span>
+                  </div>
+                </div>
+              </div>
+            </div>
           </div>
-          <div>
-            <div className="text-gray-500">Antwortrate</div>
-            <div className="font-medium">{seller.responseRate}%</div>
-          </div>
-          <div>
-            <div className="text-gray-500">Aktive Angebote</div>
-            <div className="font-medium">{seller.activeListings}</div>
-          </div>
-          <div>
-            <div className="text-gray-500">Verkäufe</div>
-            <div className="font-medium">{seller.completedSales}</div>
+
+          <Button className="mt-4 w-full" variant="outline">
+            Alle Angebote anzeigen
+          </Button>
+
+          <div className="flex items-center gap-2 text-sm text-gray-500">
+            <span className="w-2 h-2 rounded-full bg-green-500" />
+            Verifizierter Verkäufer
           </div>
         </div>
-
-        <Button className="w-full" variant="outline">
-          Verkäufer kontaktieren
-        </Button>
-
-        <Button className="w-full" variant="outline">
-          Alle Angebote anzeigen
-        </Button>
-
-        <div className="flex items-center gap-2 text-sm text-gray-500">
-          <span className="w-2 h-2 rounded-full bg-green-500" />
-          Verifizierter Verkäufer
-        </div>
-      </div>
+      )}
     </div>
   );
 }

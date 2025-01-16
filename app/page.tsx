@@ -8,6 +8,9 @@ import { Banknote, Clock, Heart, MapPin, Sparkles } from 'lucide-react';
 import MobileHeader from '@/components/header/MobileHeader';
 import Header from '@/components/header';
 import Footer from '@/components/footer/Footer';
+import { useState, useEffect } from "react";
+import { useRouter, useSearchParams } from "next/navigation";
+import SMSVerificationModal from '@/components/SMSVerificationModal';
 
 // Extended mock data for better slider testing
 const auctionProducts = [
@@ -243,6 +246,17 @@ const newProducts = [
 ];
 
 export default function Home() {
+
+  const [isModalOpen, setIsModalOpen] = useState(false);
+  const searchParams = useSearchParams();
+  const router = useRouter();
+
+  useEffect(() => {
+    if (searchParams.get("showModal") === "true") {
+      setIsModalOpen(true);
+    }
+  }, [searchParams]);
+
   const firstFilterBarItems = [
     { id: 'nearby', icon: MapPin, href: '/nearby' },
     { id: 'endingSoon', icon: Clock, href: '/ending-soon' },
@@ -256,6 +270,7 @@ export default function Home() {
   ];
 
   return (
+
     <div className="min-h-screen bg-gray-50">
      <Header />
      <MobileHeader />
@@ -294,6 +309,10 @@ export default function Home() {
 
       {/* Footer */}
       <Footer />
+      <SMSVerificationModal
+        isOpen={isModalOpen}
+        onClose={() => setIsModalOpen(false)}
+      />
     </div>
   );
 }
