@@ -8,7 +8,8 @@
   "header": {
     "searchPlaceholder": "Cosa stai cercando?",
     "listItem": "Vendi un articolo",
-    "signIn": "Accedi"
+    "signIn": "Accedi",
+    "signUp": "Registrati"
   },
   "notification": {
     "notifications": "Notifiche",

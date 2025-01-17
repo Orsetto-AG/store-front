@@ -41,7 +41,7 @@ export default function Comments() {
     <div className="max-w-3xl mx-auto mt-12">
       <div className="bg-white rounded-xl max-w-4xl mx-auto overflow-hidden">
         <div className="p-6 bg-gradient-to-r from-orange-500 to-orange-600">
-          <h2 className="text-xl font-bold text-white">Questions & Answers</h2>
+          <h2 className="text-lg font-semibold text-white">Questions & Answers</h2>
         </div>
 
         <div className="p-6">
@@ -53,11 +53,11 @@ export default function Comments() {
                   value={newQuestion}
                   onChange={(e) => setNewQuestion(e.target.value)}
                   placeholder="Ask a question about this product..."
-                  className="flex-1 p-3 border border-orange-200 rounded-lg focus:outline-none focus:ring-2 focus:ring-orange-500"
+                  className="flex-1 p-3 border border-orange-200 rounded-lg focus:outline-none focus:ring-2 focus:ring-orange-500 text-sm"
                 />
                 <button
                   type="submit"
-                  className="px-6 py-3 bg-orange-500 text-white rounded-lg hover:bg-orange-600 transition-colors"
+                  className="px-6 py-3 bg-orange-500 text-white rounded-lg hover:bg-orange-600 transition-colors text-sm"
                 >
                   Ask Question
                 </button>
@@ -70,8 +70,8 @@ export default function Comments() {
               <div key={comment.id} className="pt-6 first:pt-0">
                 <div className="flex justify-between items-start">
                   <div>
-                    <h3 className="font-semibold text-gray-900">{comment.username}</h3>
-                    <p className="text-gray-600 mt-1">{comment.question}</p>
+                    <h3 className="font-semibold text-sm text-gray-900">{comment.username}</h3>
+                    <p className="text-sm text-gray-600 mt-1">{comment.question}</p>
                     <div className="flex items-center gap-4 mt-2">
                       <button
                         onClick={() => setReplyingTo(comment.id)}
@@ -98,7 +98,7 @@ export default function Comments() {
                   >
                     <div className="flex items-center gap-2 mb-2">
                       <span className="px-2 py-1 text-xs bg-orange-500 text-white rounded-full">Seller</span>
-                      <span className="text-sm text-gray-500">
+                      <span className="text-xs text-gray-500">
                         {new Date(reply.timestamp).toLocaleDateString()}
                       </span>
                       {reply.isPrivate && (
@@ -107,7 +107,7 @@ export default function Comments() {
                         </span>
                       )}
                     </div>
-                    <p className="text-gray-700">{reply.response}</p>
+                    <p className="text-sm text-gray-700">{reply.response}</p>
                   </div>
                 ))}
 
@@ -119,11 +119,11 @@ export default function Comments() {
                         value={replyText}
                         onChange={(e) => setReplyText(e.target.value)}
                         placeholder="Type your response..."
-                        className="flex-1 p-2 border border-orange-200 rounded-lg focus:outline-none focus:ring-2 focus:ring-orange-500"
+                        className="flex-1 p-2 border border-orange-200 rounded-lg focus:outline-none focus:ring-2 focus:ring-orange-500 text-sm"
                       />
                       <button
                         onClick={() => handleSubmitReply(comment.id)}
-                        className="px-4 py-2 bg-orange-500 text-white rounded-lg hover:bg-orange-600 transition-colors"
+                        className="px-4 py-2 bg-orange-500 text-white rounded-lg hover:bg-orange-600 transition-colors text-sm"
                       >
                         <Send className="w-4 h-4" />
                       </button>
@@ -134,7 +134,7 @@ export default function Comments() {
                           isPrivateReply
                             ? 'bg-gray-100 text-gray-600 border-gray-400'
                             : 'bg-white text-gray-600 border-gray-200'
-                        }`}
+                        } text-sm`}
                       >
                         {isPrivateReply ? <Lock className="w-4 h-4" /> : <Unlock className="w-4 h-4" />}
                       </button>
@@ -155,7 +155,7 @@ export default function Comments() {
                     currentPage === i + 1
                       ? 'bg-orange-500 text-white'
                       : 'bg-orange-100 text-orange-600 hover:bg-orange-200'
-                  }`}
+                  } text-sm`}
                 >
                   {i + 1}
                 </button>
