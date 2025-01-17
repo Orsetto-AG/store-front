@@ -16,7 +16,7 @@ export default function ProductTabs({ description }: ProductTabsProps) {
         <button 
           onClick={() => setActiveTab('description')}
           className={cn(
-            "px-8 py-3 font-medium transition-colors w-full",
+            "px-8 py-3 font-medium text-sm transition-colors w-full",
             activeTab === 'description' 
               ? "text-[#ff6600]" 
               : "text-gray-600 hover:text-gray-900"
@@ -27,7 +27,7 @@ export default function ProductTabs({ description }: ProductTabsProps) {
         <button 
           onClick={() => setActiveTab('shipping')}
           className={cn(
-            "px-8 py-3 font-medium transition-colors w-full",
+            "px-8 py-3 font-medium text-sm transition-colors w-full",
             activeTab === 'shipping' 
               ? "text-[#ff6600]" 
               : "text-gray-600 hover:text-gray-900"
@@ -38,12 +38,12 @@ export default function ProductTabs({ description }: ProductTabsProps) {
       </div>
       <div className="p-6">
         {activeTab === 'description' && (
-          <p className="text-gray-700">{description}</p>
+          <p className="text-sm text-gray-700">{description}</p>
         )}
         {activeTab === 'shipping' && (
-          <div className="space-y-4 text-gray-700">
+          <div className="space-y-4">
             <ul className="space-y-2">
-              <li>Kein Änderung</li>
+              <li className="text-sm text-gray-700">Kein Änderung</li>
             </ul>
           </div>
         )}

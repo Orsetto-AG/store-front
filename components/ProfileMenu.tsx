@@ -24,27 +24,31 @@ export default function ProfileMenu({ isLoggedIn = false }: ProfileMenuProps) {
   if (!isLoggedIn) {
     return (
       <DropdownMenu>
-        <DropdownMenuTrigger asChild>
-          <Button 
-            variant="ghost" 
-            size="icon" 
-            className="rounded-full hover:bg-gray-100"
-          >
-            <User size={20} className="text-gray-600" />
-          </Button>
-        </DropdownMenuTrigger>
-        <DropdownMenuContent className="w-56" align="end">
-          <DropdownMenuLabel>Account</DropdownMenuLabel>
-          <DropdownMenuSeparator />
-          <Link href="/signin">
-            <DropdownMenuItem className="cursor-pointer">
-              <User className="mr-2 h-4 w-4" />
-              <span>{t('header.signIn')}</span>
-            </DropdownMenuItem>
-          </Link>
-        </DropdownMenuContent>
-      </DropdownMenu>
-    );
+      <DropdownMenuTrigger asChild>
+        <Button 
+          variant="ghost" 
+          size="icon" 
+          className="rounded-full hover:bg-gray-100"
+        >
+          <User size={20} className="text-gray-600" />
+        </Button>
+      </DropdownMenuTrigger>
+      <DropdownMenuContent className="w-48" align="center">
+        <Link href="/signin">
+          <DropdownMenuItem className="cursor-pointer">
+            <User className="mr-2 h-4 w-4" />
+            <span>{t('header.signIn')}</span>
+          </DropdownMenuItem>
+        </Link>
+        <Link href="/signup">
+          <DropdownMenuItem className="cursor-pointer">
+            <User className="mr-2 h-4 w-4" />
+            <span>{t('header.signUp')}</span>
+          </DropdownMenuItem>
+        </Link>
+      </DropdownMenuContent>
+    </DropdownMenu>
+  );
   }
 
   return (
