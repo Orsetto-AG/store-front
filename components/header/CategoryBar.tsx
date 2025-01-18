@@ -1,10 +1,31 @@
 'use client';
 
 import { useState, useEffect, useRef } from 'react';
-import { ChevronDown } from 'lucide-react';
+import { ChevronDown, ChevronRight, Menu } from 'lucide-react';
 import Link from 'next/link';
 import { useMediaQuery } from '@/hooks/use-media-query';
 import { cn } from '@/lib/utils';
+import {
+  DropdownMenu,
+  DropdownMenuContent,
+  DropdownMenuItem,
+  DropdownMenuTrigger,
+  DropdownMenuSub,
+  DropdownMenuSubTrigger,
+  DropdownMenuSubContent,
+} from '@/components/ui/dropdown-menu';
+import {
+  Tv,
+  ShoppingBag,
+  Home,
+  Trophy,
+  Heart,
+  Car,
+  Gamepad2,
+  BookOpen,
+  Dog,
+  Palette,
+} from "lucide-react";
 
 const categories = [
   {
@@ -129,6 +150,33 @@ const categories = [
   }
 ];
 
+function getCategoryIcon(categoryName: string) {
+  switch (categoryName) {
+    case 'Electronics':
+      return <Tv size={16} />;
+    case 'Fashion':
+      return <ShoppingBag size={16} />;
+    case 'Home & Living':
+      return <Home size={16} />;
+    case 'Sports & Outdoor':
+      return <Trophy size={16} />;
+    case 'Beauty & Health':
+      return <Heart size={16} />;
+    case 'Automotive':
+      return <Car size={16} />;
+    case 'Toys & Hobbies':
+      return <Gamepad2 size={16} />;
+    case 'Books & Media':
+      return <BookOpen size={16} />;
+    case 'Pet Supplies':
+      return <Dog size={16} />;
+    case 'Art & Collectibles':
+      return <Palette size={16} />;
+    default:
+      return null;
+  }
+}
+
 export default function CategoryBar() {
   const [activeCategory, setActiveCategory] = useState<string | null>(null);
   const [hoverIntent, setHoverIntent] = useState<string | null>(null);
@@ -169,12 +217,7 @@ export default function CategoryBar() {
     }, 100);
   };
 
-  const handleClick = (categoryId: string) => {
-    if (!isMobile) return;
-    setActiveCategory(activeCategory === categoryId ? null : categoryId);
-  };
-
-  // Hide on mobile
+  // Mobil cihazlar için kategori barını gizle
   if (isMobile) {
     return null;
   }
@@ -182,8 +225,51 @@ export default function CategoryBar() {
   return (
     <nav className="bg-white border-b border-gray-100">
       <div className="container mx-auto px-4">
-        <ul className="flex items-center justify-between h-14">
-          {categories.map((category) => (
+        <ul className="flex items-center h-14">
+          {/* All Categories Dropdown */}
+          <li className="relative pr-6 border-r border-gray-100">
+            <DropdownMenu>
+              <DropdownMenuTrigger asChild>
+                <button className="flex items-center gap-2 px-4 py-2 text-gray-700 hover:text-[#ff6600] transition-colors">
+                  <Menu className="h-4 w-4" />
+                  <span className="font-medium text-sm">Alle Kategorien</span>
+                  <ChevronDown className="h-4 w-4" />
+                </button>
+              </DropdownMenuTrigger>
+
+              <DropdownMenuContent align="start" className="w-[240px] border border-gray-200 shadow-lg">
+                {categories.map((category) => (
+                  <DropdownMenuSub key={category.id}>
+                    <DropdownMenuSubTrigger className="flex items-center justify-between p-3 text-sm font-medium text-gray-800 hover:text-[#ff6600] hover:bg-gray-200 w-full">
+                      <div className="flex items-center gap-2">
+                        {getCategoryIcon(category.name)}
+                        {category.name}
+                      </div>
+                    </DropdownMenuSubTrigger>
+
+                    <DropdownMenuSubContent sideOffset={-5} className="w-[240px] border border-gray-200 shadow-lg">
+                      <div className="py-2">
+                        {category.subcategories.map((subcategory, index) => (
+                          <DropdownMenuItem key={index} className="px-3 py-2 hover:bg-gray-200">
+                            <Link
+                              href={`/category/${category.id}/${subcategory.toLowerCase().replace(/\s+/g, '-')}`}
+                              className="text-sm text-gray-700 hover:text-[#ff6600] w-full"
+                            >
+                              {subcategory}
+                            </Link>
+                          </DropdownMenuItem>
+                        ))}
+                      </div>
+                    </DropdownMenuSubContent>
+                  </DropdownMenuSub>
+                ))}
+              </DropdownMenuContent>
+            </DropdownMenu>
+          </li>
+          {/* Horizontal Category Menu */}
+          {categories
+          .filter((category) => category.id !== 'automotive') // Exclude Automotive from the horizontal menu
+          .map((category) => (
             <li
               key={category.id}
               className="relative flex-1 text-center"
@@ -196,7 +282,6 @@ export default function CategoryBar() {
                   "transition-colors duration-200 whitespace-nowrap focus:outline-none text-sm w-full",
                   activeCategory === category.id && "text-[#ff6600]"
                 )}
-                onClick={() => handleClick(category.id)}
                 aria-expanded={activeCategory === category.id}
                 aria-controls={`dropdown-${category.id}`}
               >
@@ -210,11 +295,11 @@ export default function CategoryBar() {
                 />
               </button>
 
-              {/* Dropdown Menu */}
+              {/* Dropdown Menu for Horizontal Menu */}
               <div
                 id={`dropdown-${category.id}`}
                 className={cn(
-                  "absolute left-1/2 -translate-x-1/2 w-[250px] bg-white shadow-lg rounded-lg z-50",
+                  "absolute left-1/2 -translate-x-1/2 w-64 bg-white shadow-lg rounded-md z-50",
                   "transition-all duration-200 origin-top",
                   activeCategory === category.id
                     ? "opacity-100 visible translate-y-1"
@@ -222,15 +307,15 @@ export default function CategoryBar() {
                 )}
                 onMouseEnter={() => setHoverIntent(category.id)}
                 onMouseLeave={handleMouseLeave}
-              >
-                <ul className="py-2 grid grid-cols-1 gap-1">
+                >
+                <ul className="py-1">
                   {category.subcategories.map((subcategory, index) => (
                     <li key={index}>
                       <Link
                         href={`/category/${category.id}/${subcategory.toLowerCase().replace(/\s+/g, '-')}`}
                         className={cn(
-                          "block px-4 py-2 text-gray-700 hover:text-[#ff6600] text-sm",
-                          "hover:bg-gray-50/50 transition-colors duration-200"
+                          "block px-4 py-2.5 text-sm text-gray-600 hover:text-[#ff6600] hover:bg-gray-50",
+                          "transition-colors duration-200"
                         )}
                         onClick={() => setActiveCategory(null)}
                       >
