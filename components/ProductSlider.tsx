@@ -53,7 +53,7 @@ export default function ProductSlider({ title, products, type, viewAllHref }: Pr
           href={viewAllHref}
           className="text-[#008e9b] hover:text-[#006d77] text-sm font-medium"
         >
-          Alle anzeigen
+          Alle ansehen
         </Link>
       </div>
 

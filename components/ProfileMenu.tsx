@@ -24,33 +24,30 @@ export default function ProfileMenu({ isLoggedIn = false }: ProfileMenuProps) {
   if (!isLoggedIn) {
     return (
       <DropdownMenu>
-      <DropdownMenuTrigger asChild>
-        <Button 
-          variant="ghost" 
-          size="icon" 
-          className="rounded-full hover:bg-gray-100"
-        >
-          <User size={20} className="text-gray-600" />
-        </Button>
-      </DropdownMenuTrigger>
-      <DropdownMenuContent className="w-48" align="center">
-        <Link href="/signin">
-          <DropdownMenuItem className="cursor-pointer">
-            <User className="mr-2 h-4 w-4" />
-            <span>{t('header.signIn')}</span>
-          </DropdownMenuItem>
-        </Link>
-        <Link href="/signup">
-          <DropdownMenuItem className="cursor-pointer">
-            <User className="mr-2 h-4 w-4" />
-            <span>{t('header.signUp')}</span>
-          </DropdownMenuItem>
-        </Link>
-      </DropdownMenuContent>
-    </DropdownMenu>
-  );
+        <DropdownMenuTrigger asChild>
+          <Button 
+            variant="ghost" 
+            size="icon" 
+            className="rounded-full hover:bg-gray-100"
+          >
+            <User size={20} className="text-gray-600" />
+          </Button>
+        </DropdownMenuTrigger>
+        <DropdownMenuContent className="w-48 p-2 bg-white border border-gray-300 rounded-md shadow-md" align="center">
+          <Link href="/signin">
+            <DropdownMenuItem className="flex items-center justify-center w-full py-2 mb-2 text-white bg-orange-500 rounded-md cursor-pointer hover:bg-orange-600">
+              <span>{t('header.signIn')}</span>
+            </DropdownMenuItem>
+          </Link>
+          <Link href="/signup">
+            <DropdownMenuItem className="flex items-center justify-center w-full py-2 text-orange-500 border border-orange-500 rounded-md cursor-pointer hover:bg-orange-50">
+              <span>{t('header.signUp')}</span>
+            </DropdownMenuItem>
+          </Link>
+        </DropdownMenuContent>
+      </DropdownMenu>
+    );
   }
-
   return (
     <DropdownMenu>
       <DropdownMenuTrigger asChild>

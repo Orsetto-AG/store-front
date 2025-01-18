@@ -71,13 +71,13 @@ export default function Header() {
           {/* Sağdaki Butonlar - Masaüstü ve Mobil */}
           <div className="flex items-center gap-2 md:gap-4">
           <Link href="/vendor/add-product">
-  <Button
-    className="bg-[#008e9b] hover:bg-[#007a85] text-white h-11 hidden lg:flex items-center gap-2"
-  >
-    <Plus size={18} />
-    <NoSSR>{t('header.listItem')}</NoSSR>
-  </Button>
-</Link>
+            <Button
+             className="bg-[#FF6200] hover:bg-[#FF6200] text-white h-11 hidden lg:flex items-center gap-2"
+              >
+            <Plus size={18} />
+              <NoSSR>{t('header.listItem')}</NoSSR>
+            </Button>
+          </Link>
 
 
             {/* Favoriler Butonu */}
@@ -135,6 +135,7 @@ export default function Header() {
       )}
 
       <CategoryBar />
+      
     </div>
   );
 }
