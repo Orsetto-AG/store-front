@@ -113,7 +113,7 @@ export default function Header() {
       </div>
 
       {/* Renkli Bar */}
-      <div className="h-1 bg-gradient-to-r from-[#ff6600] via-[#ff8533] to-[#008e9b]" />
+      <div className="h-1 bg-gradient-to-r from-[#ff6600] via-[#ff8533] to-[#4e48e4]" />
 
       {/* Mobil Arama Çubuğu ve Diğer İçerik */}
       {isMobile && (

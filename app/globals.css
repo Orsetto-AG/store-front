@@ -137,7 +137,7 @@ nav.category-nav .dropdown-menu {
 /* Container width control */
 .container {
   max-width: 100% !important;
-  width: 100% !important;
+  width: 90% !important;
   overflow-x: clip !important; /* Use clip instead of hidden to allow dropdowns */
 }
 
@@ -151,4 +151,11 @@ nav.category-nav .dropdown-menu {
   top: calc(140px + 20px); /* Menünün yüksekliğine göre ayarlayın */
   height: calc(100vh - 80px); /* Menünün yüksekliğine göre ayarlayın */
   overflow-y: auto;
+}
+
+.custom-dropdown {
+  position: fixed !important;/* Sayfanın en soluna yapıştırır */
+  left: -92px !important;
+  margin: 0 !important;
+  transform: none !important;
 }

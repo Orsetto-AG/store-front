@@ -18,12 +18,13 @@
   },
   "filters": {
     "title": "Currently on Orsetto",
+    "forYou": "Just for you",
+    "new": "Brand new",
     "nearby": "Nearby",
+    "fromOne": "Everything from CHF 1",
     "endingSoon": "Ending soon",
-    "fromOne": "From CHF 1.-",
-    "popular": "Popular",
-    "new": "New",
-    "recommended": "Recommended"
+    "popular": "Highlights of the week",
+    "timeless": "Timeless treasures"
   },
   "home": {
     "liveAuctions": "Live Auctions",

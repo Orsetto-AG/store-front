@@ -113,6 +113,7 @@ const frankOffers = [
     title: 'Vintage Polaroid Collection (1960s)',
     price: 1.00,
     image: 'https://images.unsplash.com/photo-1526170375885-4d8ecf77b99f?w=400&h=300&fit=crop',
+    endTime: new Date(Date.now() + 86400000).toISOString(),
     type: 'fixed',
     location: 'Winterthur'
   },
@@ -121,6 +122,7 @@ const frankOffers = [
     title: 'Antique Brass Telescope',
     price: 1.00,
     image: 'https://images.unsplash.com/photo-1501686962565-1350ab98237e?w=400&h=300&fit=crop',
+    endTime: new Date(Date.now() + 86400000).toISOString(),
     type: 'fixed',
     location: 'Thun',
     isNew: true
@@ -130,6 +132,7 @@ const frankOffers = [
     title: 'Classic Vinyl Records (Jazz)',
     price: 1.00,
     image: 'https://images.unsplash.com/photo-1539375665275-f9de415ef9ac?w=400&h=300&fit=crop',
+    endTime: new Date(Date.now() + 86400000).toISOString(),
     type: 'fixed',
     location: 'Lugano'
   },
@@ -138,6 +141,7 @@ const frankOffers = [
     title: 'Handcrafted Leather Journal',
     price: 1.00,
     image: 'https://images.unsplash.com/photo-1544487070-833e3aa8b85a?w=400&h=300&fit=crop',
+    endTime: new Date(Date.now() + 86400000).toISOString(),
     type: 'fixed',
     location: 'Chur'
   },
@@ -146,6 +150,7 @@ const frankOffers = [
     title: 'Vintage Camera Collection',
     price: 1.00,
     image: 'https://images.unsplash.com/photo-1452780212940-6f5c0d14d848?w=400&h=300&fit=crop',
+    endTime: new Date(Date.now() + 86400000).toISOString(),
     type: 'fixed',
     location: 'St. Gallen'
   },
@@ -154,6 +159,7 @@ const frankOffers = [
     title: 'Handmade Ceramic Vase Set',
     price: 1.00,
     image: 'https://images.unsplash.com/photo-1578749556568-bc2c40e68b61?w=400&h=300&fit=crop',
+    endTime: new Date(Date.now() + 86400000).toISOString(),
     type: 'fixed',
     location: 'Biel'
   },
@@ -162,6 +168,7 @@ const frankOffers = [
     title: 'Vintage Swiss Watch Parts',
     price: 1.00,
     image: 'https://images.unsplash.com/photo-1509048191080-d2984bad6ae5?w=400&h=300&fit=crop',
+    endTime: new Date(Date.now() + 86400000).toISOString(),
     type: 'fixed',
     location: 'Zug'
   },
@@ -170,6 +177,7 @@ const frankOffers = [
     title: 'Antique Pocket Watch Collection',
     price: 1.00,
     image: 'https://images.unsplash.com/photo-1509048191080-d2984bad6ae5?w=400&h=300&fit=crop',
+    endTime: new Date(Date.now() + 86400000).toISOString(),
     type: 'fixed',
     location: 'Lucerne'
   }
@@ -182,6 +190,7 @@ const newProducts = [
     title: 'MacBook Pro M3 Max (2024)',
     price: 3499.99,
     image: 'https://images.unsplash.com/photo-1517336714731-489689fd1ca8?w=400&h=300&fit=crop',
+    endTime: new Date(Date.now() + 86400000).toISOString(),
     type: 'new',
     location: 'Zug',
     isNew: true
@@ -191,6 +200,7 @@ const newProducts = [
     title: 'Canon EOS R5 + RF 28-70mm f/2',
     price: 5299.99,
     image: 'https://images.unsplash.com/photo-1510127034890-ba27508e9f1c?w=400&h=300&fit=crop',
+    endTime: new Date(Date.now() + 86400000).toISOString(),
     type: 'new',
     location: 'Lucerne'
   },
@@ -199,6 +209,7 @@ const newProducts = [
     title: 'Herman Miller Aeron (2023)',
     price: 1699.99,
     image: 'https://images.unsplash.com/photo-1580480055273-228ff5388ef8?w=400&h=300&fit=crop',
+    endTime: new Date(Date.now() + 86400000).toISOString(),
     type: 'new',
     location: 'Aarau'
   },
@@ -207,6 +218,7 @@ const newProducts = [
     title: 'Sonos Arc + Sub + One SL',
     price: 2199.99,
     image: 'https://images.unsplash.com/photo-1545454675-3531b543be5d?w=400&h=300&fit=crop',
+    endTime: new Date(Date.now() + 86400000).toISOString(),
     type: 'new',
     location: 'St. Gallen',
     isNew: true
@@ -216,6 +228,7 @@ const newProducts = [
     title: 'iPad Pro 12.9" M2 (2024)',
     price: 1299.99,
     image: 'https://images.unsplash.com/photo-1544244015-0df4b3ffc6b0?w=400&h=300&fit=crop',
+    endTime: new Date(Date.now() + 86400000).toISOString(),
     type: 'new',
     location: 'Basel'
   },
@@ -224,6 +237,7 @@ const newProducts = [
     title: 'Sony WH-1000XM5 Headphones',
     price: 399.99,
     image: 'https://images.unsplash.com/photo-1546435770-a3e426bf472b?w=400&h=300&fit=crop',
+    endTime: new Date(Date.now() + 86400000).toISOString(),
     type: 'new',
     location: 'Geneva'
   },
@@ -232,6 +246,7 @@ const newProducts = [
     title: 'DJI Mavic 3 Pro Combo',
     price: 2299.99,
     image: 'https://images.unsplash.com/photo-1473968512647-3e447244af8f?w=400&h=300&fit=crop',
+    endTime: new Date(Date.now() + 86400000).toISOString(),
     type: 'new',
     location: 'Zurich'
   },
@@ -240,6 +255,7 @@ const newProducts = [
     title: 'Dyson V15 Detect Absolute',
     price: 799.99,
     image: 'https://images.unsplash.com/photo-1558317374-067fb5f30001?w=400&h=300&fit=crop',
+    endTime: new Date(Date.now() + 86400000).toISOString(),
     type: 'new',
     location: 'Bern'
   }
@@ -256,41 +272,34 @@ export default function Home() {
       setIsModalOpen(true);
     }
   }, [searchParams]);
-
-  const firstFilterBarItems = [
-    { id: 'nearby', icon: MapPin, href: '/nearby' },
-    { id: 'endingSoon', icon: Clock, href: '/ending-soon' },
-    { id: 'fromOne', icon: Banknote, href: '/from-one' },
-  ];
-
-  const secondFilterBarItems = [
-    { id: 'popular', icon: Heart, href: '/popular' },
-    { id: 'new', icon: Sparkles, href: '/new' },
-    { id: 'recommended', icon: Sparkles, href: '/recommended' },
-  ];
-
+  
   return (
 
-    <div className="min-h-screen bg-gray-50">
+    <div className="min-h-screen bg-white">
      <Header />
      <MobileHeader />
       {/* Banner Section */}
-      <BannerSection />
+      {/*<BannerSection />*/}
 
-      {/* Filter Bar - İlk */}
-      <FilterBar filters={firstFilterBarItems} />
+      {/* Filter Bar */}
+      <FilterBar /> 
 
       {/* Product Sliders */}
       <div className="container mx-auto px-4 py-8">
+
+      <ProductSlider
+          title="Neue Produkte"
+          products={newProducts}
+          type="new"
+          viewAllHref="/new"
+        />
+
         <ProductSlider
           title="Live Auktionen"
           products={auctionProducts}
           type="auction"
           viewAllHref="/auctions"
         />
-
-        {/* Filter Bar - Tekrar */}
-        <FilterBar filters={secondFilterBarItems} />
 
         <ProductSlider
           title="1 Frank Angebote"
@@ -299,12 +308,6 @@ export default function Home() {
           viewAllHref="/offers"
         />
 
-        <ProductSlider
-          title="Neue Produkte"
-          products={newProducts}
-          type="new"
-          viewAllHref="/new"
-        />
       </div>
 
       {/* Footer */}

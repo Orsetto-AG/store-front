@@ -18,12 +18,13 @@
   },
   "filters": {
     "title": "Attualmente su Orsetto",
-    "nearby": "Nelle vicinanze",
-    "endingSoon": "In scadenza",
-    "fromOne": "Da CHF 1.-",
-    "popular": "Popolare",
-    "new": "Nuovo",
-    "recommended": "Consigliato"
+    "forYou": "Solo per te",
+    "new": "Nuovo di zecca",
+    "nearby": "Vicino a te",
+    "fromOne": "Tutto da CHF 1",
+    "endingSoon": "Quasi finito",
+    "popular": "Settimana dei Punti Forti",
+    "timeless": "Tesori senza tempo"
   },
   "home": {
     "liveAuctions": "Aste in diretta",
