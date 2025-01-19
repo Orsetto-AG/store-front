@@ -18,12 +18,13 @@
   },
   "filters": {
     "title": "Actuellement sur Orsetto",
-    "nearby": "À proximité",
-    "endingSoon": "Se termine bientôt",
-    "fromOne": "Dès CHF 1.-",
-    "popular": "Populaire",
-    "new": "Nouveau",
-    "recommended": "Recommandé"
+    "forYou": "Juste pour toi",
+    "new": "Tout neuf",
+    "nearby": "Près de chez toi",
+    "fromOne": "Tout à partir de CHF 1",
+    "endingSoon": "Bientôt terminé",
+    "popular": "Temps forts de la semaine",
+    "timeless": "Trésors intemporels"
   },
   "home": {
     "liveAuctions": "Enchères en direct",

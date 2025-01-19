@@ -30,7 +30,7 @@ import {
 const categories = [
   {
     id: 'electronics',
-    name: 'Electronics',
+    name: 'Electronics und Technologie',
     subcategories: [
       'Smartphones & Tablets',
       'Computers & Laptops',
@@ -42,7 +42,7 @@ const categories = [
   },
   {
     id: 'fashion',
-    name: 'Fashion',
+    name: 'Mode und Accessoires',
     subcategories: [
       'Men\'s Clothing',
       'Women\'s Clothing',
@@ -54,7 +54,7 @@ const categories = [
   },
   {
     id: 'home',
-    name: 'Home & Living',
+    name: 'Haushalt und Wohnen',
     subcategories: [
       'Furniture',
       'Kitchen & Dining',
@@ -66,7 +66,7 @@ const categories = [
   },
   {
     id: 'sports',
-    name: 'Sports & Outdoor',
+    name: 'Sports und Outdoor',
     subcategories: [
       'Exercise Equipment',
       'Outdoor Recreation',
@@ -102,7 +102,7 @@ const categories = [
   },
   {
     id: 'toys',
-    name: 'Toys & Hobbies',
+    name: 'Spielzeug und Hobby',
     subcategories: [
       'Action Figures',
       'Building Toys',
@@ -147,24 +147,84 @@ const categories = [
       'Limited Editions',
       'Art Supplies'
     ]
-  }
+  },
+  {
+    id: 'automotive',
+    name: 'Automotive',
+    subcategories: [
+      'Car Parts & Accessories',
+      'Motorcycle Parts',
+      'Tools & Equipment',
+      'Car Electronics',
+      'Tires & Wheels',
+      'Car Care'
+    ]
+  },
+  {
+    id: 'automotive',
+    name: 'Automotive',
+    subcategories: [
+      'Car Parts & Accessories',
+      'Motorcycle Parts',
+      'Tools & Equipment',
+      'Car Electronics',
+      'Tires & Wheels',
+      'Car Care'
+    ]
+  },
+  {
+    id: 'automotive',
+    name: 'Automotive',
+    subcategories: [
+      'Car Parts & Accessories',
+      'Motorcycle Parts',
+      'Tools & Equipment',
+      'Car Electronics',
+      'Tires & Wheels',
+      'Car Care'
+    ]
+  },
+  {
+    id: 'automotive',
+    name: 'Automotive',
+    subcategories: [
+      'Car Parts & Accessories',
+      'Motorcycle Parts',
+      'Tools & Equipment',
+      'Car Electronics',
+      'Tires & Wheels',
+      'Car Care'
+    ]
+  },
+  {
+    id: 'automotive',
+    name: 'Automotive',
+    subcategories: [
+      'Car Parts & Accessories',
+      'Motorcycle Parts',
+      'Tools & Equipment',
+      'Car Electronics',
+      'Tires & Wheels',
+      'Car Care'
+    ]
+  },
 ];
 
 function getCategoryIcon(categoryName: string) {
   switch (categoryName) {
-    case 'Electronics':
+    case 'Electronics und Technologie':
       return <Tv size={16} />;
-    case 'Fashion':
+    case 'Mode und Accessoires':
       return <ShoppingBag size={16} />;
-    case 'Home & Living':
+    case 'Haushalt und Wohnen':
       return <Home size={16} />;
-    case 'Sports & Outdoor':
+    case 'Sports und Outdoor':
       return <Trophy size={16} />;
     case 'Beauty & Health':
       return <Heart size={16} />;
     case 'Automotive':
       return <Car size={16} />;
-    case 'Toys & Hobbies':
+    case 'Spielzeug und Hobby':
       return <Gamepad2 size={16} />;
     case 'Books & Media':
       return <BookOpen size={16} />;
@@ -182,6 +242,7 @@ export default function CategoryBar() {
   const [hoverIntent, setHoverIntent] = useState<string | null>(null);
   const hoverTimerRef = useRef<NodeJS.Timeout>();
   const isMobile = useMediaQuery('(max-width: 768px)');
+  
 
   useEffect(() => {
     return () => {
@@ -203,6 +264,8 @@ export default function CategoryBar() {
       setHoverIntent(categoryId);
     }, 100);
   };
+
+  const excludedCategories = ['automotive', 'beauty', 'pets', 'books'];
 
   const handleMouseLeave = () => {
     if (isMobile) return;
@@ -231,13 +294,12 @@ export default function CategoryBar() {
             <DropdownMenu>
               <DropdownMenuTrigger asChild>
                 <button className="flex items-center gap-2 px-4 py-2 text-gray-700 hover:text-[#ff6600] transition-colors">
-                  <Menu className="h-4 w-4" />
-                  <span className="font-medium text-sm">Alle Kategorien</span>
                   <ChevronDown className="h-4 w-4" />
+                  <span className="font-medium text-sm">Alle Kategorien</span>
                 </button>
               </DropdownMenuTrigger>
 
-              <DropdownMenuContent align="start" className="w-[240px] border border-gray-200 shadow-lg">
+              <DropdownMenuContent align="start" sideOffset={1} className="custom-dropdown w-[268px] border border-gray-200 shadow-lg rounded-none max-h-[640px] overflow-y-auto">
                 {categories.map((category) => (
                   <DropdownMenuSub key={category.id}>
                     <DropdownMenuSubTrigger className="flex items-center justify-between p-3 text-sm font-medium text-gray-800 hover:text-[#ff6600] hover:bg-gray-200 w-full">
@@ -247,7 +309,7 @@ export default function CategoryBar() {
                       </div>
                     </DropdownMenuSubTrigger>
 
-                    <DropdownMenuSubContent sideOffset={-5} className="w-[240px] border border-gray-200 shadow-lg">
+                    <DropdownMenuSubContent sideOffset={-5} className="w-[240px] border border-gray-200 shadow-lg rounded-none">
                       <div className="py-2">
                         {category.subcategories.map((subcategory, index) => (
                           <DropdownMenuItem key={index} className="px-3 py-2 hover:bg-gray-200">
@@ -268,7 +330,7 @@ export default function CategoryBar() {
           </li>
           {/* Horizontal Category Menu */}
           {categories
-          .filter((category) => category.id !== 'automotive') // Exclude Automotive from the horizontal menu
+          .filter((category) => !excludedCategories.includes(category.id)) // Exclude Automotive from the horizontal menu
           .map((category) => (
             <li
               key={category.id}
